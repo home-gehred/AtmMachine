@@ -57,10 +57,38 @@ namespace AtmMachine.unit.tests.Entities
         }
 
         [Fact]
+        public void GivenAValidDollarAmountWithDollarSignWhenTryParseThenGetExpectedTender()
+        {
+            // Arrange
+            var testAmount = "$50";
+
+            // Act
+            var actualResult = UnitedStatesTender.TryParse(testAmount, out UnitedStatesTender actualTender);
+
+            // Assert
+            Assert.True(actualResult, "Expected try parse to work");
+            Assert.Equal<int>(UnitedStatesTender.FiftyDollar.Value, actualTender.Value);
+        }
+
+        [Fact]
         public void GivenAnInvalidBillAmountWhenTryParseThenGetExpectedTender()
         {
             // Arrange
             var testAmount = "3";
+
+            // Act
+            var actualResult = UnitedStatesTender.TryParse(testAmount, out UnitedStatesTender actualTender);
+
+            // Assert
+            Assert.False(actualResult, "Expected try parse to not work");
+            Assert.True(actualTender == null, "Expected null.");
+        }
+
+        [Fact]
+        public void GivenAnEmptyBillAmountWhenTryParseThenGetExpectedTender()
+        {
+            // Arrange
+            var testAmount = string.Empty;
 
             // Act
             var actualResult = UnitedStatesTender.TryParse(testAmount, out UnitedStatesTender actualTender);

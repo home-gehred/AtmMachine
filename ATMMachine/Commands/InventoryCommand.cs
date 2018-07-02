@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ATMMachine.Entities;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 
 namespace ATMMachine.Commands
 {
@@ -16,7 +16,7 @@ namespace ATMMachine.Commands
             if (input.StartsWith(commandKey, StringComparison.InvariantCulture))
             {
                 var userBills = input.Substring((commandKey.Length - 1));
-                var billAmounts = userBills.Split('$', StringSplitOptions.RemoveEmptyEntries);
+                var billAmounts = userBills.Split(new char[] { ' ', '$' }, StringSplitOptions.RemoveEmptyEntries);
                 var isValid = true;
                 foreach (var billAmount in billAmounts)
                 {
@@ -46,14 +46,21 @@ namespace ATMMachine.Commands
             if (userInput.StartsWith(commandKey, StringComparison.InvariantCulture))
             {
                 var userBills = userInput.Substring((commandKey.Length - 1));
-                var billAmounts = userBills.Split('$', StringSplitOptions.RemoveEmptyEntries);
-                var isValid = true;
-                foreach(var billAmount in billAmounts)
+                if (userBills.Contains("$$"))
                 {
-                    isValid = isValid && UnitedStatesTender.TryParse(billAmount, out UnitedStatesTender tender);
+                    return false;
                 }
+                else
+                {
+                    var billAmounts = userBills.Split(new char[] { ' ', '$' }, StringSplitOptions.RemoveEmptyEntries);
+                    var isValid = true;
+                    foreach (var billAmount in billAmounts)
+                    {
+                        isValid = isValid && UnitedStatesTender.TryParse(billAmount, out UnitedStatesTender tender);
+                    }
 
-                return isValid;
+                    return isValid;
+                }
             }
             return false;
         }

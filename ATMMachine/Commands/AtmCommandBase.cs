@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 using ATMMachine.Entities;
 
 namespace ATMMachine.Commands

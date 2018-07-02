@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ATMMachine.interfaces
+namespace ATMMachine.Interfaces
 {
     
     public interface IWithdrawalStrategy

@@ -1,5 +1,5 @@
 ﻿using System;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 
 namespace ATMMachine.Commands
 {
@@ -39,7 +39,11 @@ namespace ATMMachine.Commands
             if (userInput.StartsWith(commandKey, StringComparison.InvariantCulture))
             {
                 var amount = userInput.Substring(commandKey.Length);
-                return int.TryParse(amount, out int result);
+                if (int.TryParse(amount, out int result))
+                {
+                    return result >= 0;
+                }
+                return false;
             }
             return false;
         }

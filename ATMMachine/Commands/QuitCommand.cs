@@ -1,5 +1,5 @@
 ﻿using System;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 
 namespace ATMMachine.Commands
 {

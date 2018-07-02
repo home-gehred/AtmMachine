@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 using Moq;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 using ATMMachine.Entities;
 using ATMMachine.WithdrawalStrategies;
 

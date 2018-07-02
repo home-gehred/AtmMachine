@@ -1,6 +1,6 @@
 ﻿using System;
 using ATMMachine.Entities;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 
 namespace ATMMachine.Commands
 {

@@ -58,7 +58,12 @@ namespace ATMMachine.Entities
 
         public static bool TryParse(string amount, out UnitedStatesTender bill)
         {
-            if (int.TryParse(amount, out int tenderValue))
+            var cleanAmount = amount;
+            if (cleanAmount.StartsWith('$'))
+            {
+                cleanAmount = cleanAmount.Substring(1);
+            }
+            if (int.TryParse(cleanAmount, out int tenderValue))
             {
                 var allTenders = GetAllDefinedTenders();
                 foreach(var tender in allTenders)

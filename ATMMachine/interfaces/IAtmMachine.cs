@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ATMMachine.Entities;
 
-namespace ATMMachine.interfaces
+namespace ATMMachine.Interfaces
 {
     public interface IAtmMachine
     {

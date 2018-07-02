@@ -3,10 +3,6 @@ namespace ATMMachine.Commands
 {
     public class CommandFactory
     {
-        public CommandFactory()
-        {
-        }
-
         public AtmCommandBase CreateCommand(string input)
         {
             var invalidCommand = new InvalidCommand();

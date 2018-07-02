@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ATMMachine.interfaces;
-using ATMMachine.Entities;
+using ATMMachine.Interfaces;
 
 namespace ATMMachine.Entities
 {

@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="interfaces\" />
+    <Folder Include="Interfaces\" />
     <Folder Include="WithdrawalStrategies\" />
     <Folder Include="Commands\" />
   </ItemGroup>

@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Linq;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 using ATMMachine.Entities;
 
 namespace ATMMachine.WithdrawalStrategies
 {
     public class LargestBillsOnly : IWithdrawalStrategy
     {
-        public LargestBillsOnly()
-        {
-        }
-
         public IWithdrawalResult Withdraw(int amount, IAtmInventory inventory)
         {
-            // Create a CashTransaction
-            // For each bill type check inventory
-            // When inventory is not adaquate simply set error message to insufficient funds.
             var withdrawTransaction = CashTransaction.Start();
             var descendingUnitedStatesTenders = UnitedStatesTender.GetAllDefinedTenders().OrderByDescending(tender => tender.Value);
 

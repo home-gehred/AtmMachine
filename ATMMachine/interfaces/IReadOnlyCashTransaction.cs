@@ -1,7 +1,7 @@
 ﻿using System;
 using ATMMachine.Entities;
 
-namespace ATMMachine.interfaces
+namespace ATMMachine.Interfaces
 {
     public interface IReadOnlyCashTransaction
     {

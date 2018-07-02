@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using ATMMachine.Entities;
-using ATMMachine.interfaces;
+using ATMMachine.Interfaces;
 
-namespace ATMMachine.interfaces
+namespace ATMMachine.Interfaces
 {
     public interface IAtmInventory
     {
